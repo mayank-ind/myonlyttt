@@ -212,7 +212,7 @@ async def account_login(bot: Client, m: Message):
                         await reply.delete (True)
                         time.sleep(1)
                     except Exception as e:
-                        await m.reply_text(f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}:{url}")
+                        await m.reply_text(f'**downloading failed ❌**\n\n"**{name}**:{url}"')
                         continue
             except Exception as e:
                 await m.reply_text(str(e))
