@@ -122,7 +122,7 @@ async def account_login(bot: Client, m: Message):
             name = links[i][0].replace("\t", "")
                 # await m.reply_text(name +":"+ url)
 
-            Show = f"**Downloading:-**\n\n**Name :-** ```{name}\nQuality - {raw_text2}```\n\n**Url :-** ```{url}```"
+            Show = f"**Downloading...**\n\n**Name :-** {name}\n\n**By:- @thelegend_boy**```Quality - {raw_text2}\n\n**Url :-** {url}```"
             prog = await m.reply_text(Show)
             cc = f'**{str(count).zfill(3)} ** {name}\n{raw_text0}'
 
@@ -162,7 +162,7 @@ async def account_login(bot: Client, m: Message):
                         ka=await helper.download(url)
                         await prog.delete (True)
                         time.sleep(1)
-                        reply = await m.reply_text(f"Uploading - ```{name}```")
+                        reply = await m.reply_text(f"Uploading - {name}")
                         time.sleep(1)
                         start_time = time.time()
                         await m.reply_document(ka, caption=f'**Title :** {name}.pdf\n{raw_text0}')
@@ -192,7 +192,7 @@ async def account_login(bot: Client, m: Message):
                         filename = f"{name}.mp4"
                         subprocess.run(f'ffmpeg -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"', shell=True)
                         await prog.delete (True)
-                        reply = await m.reply_text(f"Uploading - ```{name}```")
+                        reply = await m.reply_text(f"Uploading - {name}")
                         try:
                             if thumb == "no":
                                 thumbnail = f"{filename}.jpg"
@@ -212,7 +212,7 @@ async def account_login(bot: Client, m: Message):
                         await reply.delete (True)
                         time.sleep(1)
                     except Exception as e:
-                        await m.reply_text(f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - ```{url}```")
+                        await m.reply_text(f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}:{url}")
                         continue
             except Exception as e:
                 await m.reply_text(str(e))
