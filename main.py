@@ -122,9 +122,9 @@ async def account_login(bot: Client, m: Message):
             name = links[i][0].replace("\t", "")
                 # await m.reply_text(name +":"+ url)
 
-            Show = f"**Downloading...**\n\n**Name :-** {name}\n\n**By:- @thelegend_boy**```Quality - {raw_text2}\n\n**Url :-** {url}```"
+            Show = f"**Downloading...**\n\n**Name :-** {name}\n\n**By:- @thelegend_boy**```Quality - {raw_text2}\n\n** {url}```"
             prog = await m.reply_text(Show)
-            cc = f'**{str(count).zfill(3)} ** {name}\n{raw_text0}'
+            cc = f'**Seq-ID-:{str(count).zfill(3)}**\n\n**Name :**<a href="https://t.me/TargetSsc_2024">{name}</a>\n{raw_text0}\n\n**Downloaded By:꧁ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ꧂**'
 
             if "youtu" in url:
                 if raw_text2 in ["144", "240", "480"]:
@@ -165,7 +165,7 @@ async def account_login(bot: Client, m: Message):
                         reply = await m.reply_text(f"Uploading - {name}")
                         time.sleep(1)
                         start_time = time.time()
-                        await m.reply_document(ka, caption=f'**Title :** {name}.pdf\n{raw_text0}')
+                        await m.reply_document(ka, caption=f'**Seq-ID:** {str(count).zfill(3)}\n\n**Title :**<a href="https://t.me/thelegend_boy">{name}</a>.pdf\n{raw_text0}')
                         count+=1
                         time.sleep(1)
                         await reply.delete (True)
